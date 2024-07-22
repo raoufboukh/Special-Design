@@ -374,22 +374,20 @@ h1{
 /* section four */
 
 .gallery .container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(170px,1fr));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 19px;
     padding: 0 30px;
 }
 
-.gallery .container .img {
+.gallery .container img{
     border: 4px solid #eee;
     outline: 1px solid #ccc;
-}
-.gallery .container .img img{
-    width: 100%;
-    height: 100%;
+    width: calc((100% / 5) - 19px);
     cursor: pointer;
 }
-
 /* section five */
 
 .time{
@@ -701,6 +699,9 @@ footer{
     .contact .container form{
         width: 700px;
     }
+    .gallery .container img{
+        width: calc((100% / 4) - 15px);
+    }
 }
 
 
@@ -761,10 +762,16 @@ footer{
     .skills .container div div{
         flex-basis: 100%;
     }
+    .gallery .container img{
+        width: calc((100% / 3) - 15px);
+    }
 }
 
 @media(max-width:546px){
     .skills .container > div{
         width: 70vw;
+    }
+    .gallery .container img{
+        width: 100%;
     }
 }

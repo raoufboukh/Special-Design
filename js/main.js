@@ -15,7 +15,6 @@ let prog = document.querySelectorAll(".progress span");
 let menu = document.querySelector(".links i");
 let links = document.querySelector(".links ul");
 let a = document.querySelectorAll(".links ul li a");
-// document.body.style.cursor = "";
 window.onscroll = function(){
     sections.forEach(sec =>{
         let top = window.scrollY;
@@ -67,11 +66,12 @@ document.addEventListener('click', (e) => {
 if (mainColors !== null) {
     document.documentElement.style.setProperty('--main-color', mainColors);
 }
-lis.forEach(li =>{
-    li.onclick = function(){
-        location.href = "/SpecialDesign/index.html#"+li.getAttribute("data-id");
-    }
-})
+
+for(let i = 0;i < lis.length;i++){
+    lis[i].addEventListener("click",function(){
+        location.href = a[i].href;
+    })
+}
 
 images.forEach(el =>{
     el.onclick = function(){
